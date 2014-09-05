@@ -1,0 +1,25 @@
+{% load widget_tweaks %}
+<form class="form-horizontal" role="form" method="post">
+    {% csrf_token %}
+    <div class="form-group  {{ form.date.errors|yesno:"has-error," }}">
+        <label for="inputDate" class="col-lg-2 control-label">Dari</label>
+
+        <div class="col-lg-4">
+            {% render_field form.username_or_email class="form-control" %}
+        </div>
+        <span class="help-block">{{ form.username_or_email.errors }}</span>
+    </div>
+    <div class="form-group {{ form.to_date.errors|yesno:"has-error," }}">
+        <label for="inputDays" class="col-lg-2 control-label">Sampai</label>
+
+        <div class="col-lg-4">
+            {% render_field form.password %}
+            <span class="help-block">{{ form.password.errors }}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
