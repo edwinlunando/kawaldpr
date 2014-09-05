@@ -24,7 +24,7 @@
     <![endif]-->
 
     <!-- This file store project specific CSS -->
-    <link href="{% static 'css/application.css' %}" rel="stylesheet">
+    <link href="{% static 'css/kawaldpr.css' %}" rel="stylesheet">
 
     <!-- Use this to quickly test CSS changes in a template,
         then move to application.css -->
@@ -53,7 +53,7 @@
                     <li><a href="{% url 'forgot-password' %}">Forgot Password</a></li>
                     <li><a href="{% url 'sign-out' %}">Sign-out</a></li>
                 {% endif %}
-
+                <li><a href="{% url 'legislatures' %}">DPR</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
 
             </ul>
@@ -78,13 +78,14 @@
         <p>Use this document as a way to quick start any new project.</p>
     {% endblock content %}
 
+
 </div>
 <!-- /container -->
 
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 {% compressed_js 'application' %}
 {% block extra_js %}{% endblock extra_js %}
 </body>

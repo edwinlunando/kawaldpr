@@ -8,57 +8,59 @@ from .models import Contact, User
 from .forms import UserCreationAdminForm
 
 
-# class LogEntryAdmin(admin.ModelAdmin):
+class LogEntryAdmin(admin.ModelAdmin):
 
-#     date_hierarchy = 'action_time'
+    date_hierarchy = 'action_time'
 
-#     readonly_fields = LogEntry._meta.get_all_field_names()
+    # readonly_fields = LogEntry._meta.get_all_field_names()
+    readonly_fields = ['action_time', 'user', 'content_type', 'object_id', 'object_repr', 'action_flag',
+                       'change_message']
 
-#     list_filter = [
-#         'user',
-#         'content_type',
-#         'action_flag'
-#     ]
+    list_filter = [
+        'user',
+        'content_type',
+        'action_flag'
+    ]
 
-#     search_fields = [
-#         'object_repr',
-#         'change_message'
-#     ]
+    search_fields = [
+        'object_repr',
+        'change_message'
+    ]
 
-#     list_display = [
-#         'action_time',
-#         'user',
-#         'content_type',
-#         'object_link',
-#         'action_flag',
-#         'change_message',
-#     ]
+    list_display = [
+        'action_time',
+        'user',
+        'content_type',
+        'object_link',
+        'action_flag',
+        'change_message',
+    ]
 
-#     def has_add_permission(self, request):
-#         return False
+    def has_add_permission(self, request):
+        return False
 
-#     def has_change_permission(self, request, obj=None):
-#         return request.user.is_superuser and request.method != 'POST'
+    def has_change_permission(self, request, obj=None):
+        return request.user.is_superuser and request.method != 'POST'
 
-#     def has_delete_permission(self, request, obj=None):
-#         return False
+    def has_delete_permission(self, request, obj=None):
+        return False
 
-#     def object_link(self, obj):
-#         if obj.action_flag == DELETION:
-#             link = escape(obj.object_repr)
-#         else:
-#             ct = obj.content_type
-#             link = u'<a href="%s">%s</a>' % (
-#                 reverse('admin:%s_%s_change' % (ct.app_label, ct.model), args=[obj.object_id]),
-#                 escape(obj.object_repr),
-#             )
-#         return link
-#     object_link.allow_tags = True
-#     object_link.admin_order_field = 'object_repr'
-#     object_link.short_description = u'object'
+    def object_link(self, obj):
+        if obj.action_flag == DELETION:
+            link = escape(obj.object_repr)
+        else:
+            ct = obj.content_type
+            link = u'<a href="%s">%s</a>' % (
+                reverse('admin:%s_%s_change' % (ct.app_label, ct.model), args=[obj.object_id]),
+                escape(obj.object_repr),
+            )
+        return link
+    object_link.allow_tags = True
+    object_link.admin_order_field = 'object_repr'
+    object_link.short_description = u'object'
 
-#     def queryset(self, request):
-#         return super(LogEntryAdmin, self).queryset(request).prefetch_related('content_type')
+    def get_queryset(self, request):
+        return super(LogEntryAdmin, self).queryset(request).prefetch_related('content_type')
 
 
 class UserCustomAdmin(UserAdmin):
@@ -86,5 +88,5 @@ class ContactAdmin(admin.ModelAdmin):
 
 admin.site.register(User, UserCustomAdmin)
 admin.site.register(Contact, ContactAdmin)
-# admin.site.register(LogEntry, LogEntryAdmin)
+admin.site.register(LogEntry, LogEntryAdmin)
 admin.site.unregister(Site)

@@ -199,7 +199,7 @@ DJANGO_APPS = (
 
     # Installed application
     'widget_tweaks',  # https://bitbucket.org/kmike/django-widget-tweaks/
-    'admin_honeypot',  # https://github.com/dmpayton/django-admin-honeypot
+    # 'admin_honeypot',  # https://github.com/dmpayton/django-admin-honeypot
     'ckeditor',  # https://pypi.python.org/pypi/django-ckeditor-updated/4.4.0
     'pipeline',  # https://github.com/cyberdelia/django-pipeline
 )
@@ -207,6 +207,7 @@ DJANGO_APPS = (
 # Apps specific for this project go here.
 LOCAL_APPS = (
     'core',
+    'legislature'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -252,16 +253,6 @@ LOGGING = {
 WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 # END WSGI CONFIGURATION
 
-
-# SOUTH CONFIGURATION
-# See: http://south.readthedocs.org/en/latest/installation.html#configuring-your-django-installation
-INSTALLED_APPS += (
-    # Database migration helpers:
-    'south',
-)
-# Don't need to use South when setting up a test database.
-SOUTH_TESTS_MIGRATE = False
-# END SOUTH CONFIGURATION
 
 # USER MODEL CONFIGURATION
 
@@ -337,3 +328,8 @@ PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
 # DJANGO GRAPPELLI https://github.com/sehmaschine/django-grappelli
 
 GRAPPELLI_ADMIN_TITLE = 'kawaldpr'
+
+
+# TEST RUNNER https://docs.djangoproject.com/en/dev/topics/testing/advanced/#defining-a-test-runner
+
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'

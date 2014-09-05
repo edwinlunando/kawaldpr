@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib.auth.views import logout
 from django.views.generic import TemplateView
 from core import views as core_views
+from legislature import views as legislature_views
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -17,6 +18,10 @@ urlpatterns = patterns('',
                        url(r'^reset-password/(?P<guid>[-_\w]+)$',
                            core_views.ResetPasswordPage.as_view(), name='reset-password'),
 
+
+
+                       url(r'^dpr/detail$', legislature_views.LegislatureDetail.as_view(), name='legislature-detail'),
+                       url(r'^dpr/$', legislature_views.LegislatureList.as_view(), name='legislatures'),
                        # Examples:
                        # url(r'^$', 'kawaldpr.views.home', name='home'),
                        # url(r'^kawaldpr/', include('kawaldpr.foo.urls')),
