@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>Edwin Lunando Berhasil Menangkap Jero Wacik</h2>
+
+            <div class="row">
+                <figure>
+                    <img class="media-object img-responsive" src="http://lorempixel.com/800/300" alt="...">
+                </figure>
+            </div>
+            <br/>
+            <div class="row">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem molestias omnis similique sint vero voluptatem. Consectetur doloremque dolorum, esse fugiat id ipsam molestiae, numquam quae, quam quod sit veniam voluptas.
+
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aperiam, architecto, autem cumque dolor exercitationem harum ipsam itaque iure, obcaecati soluta tenetur voluptatum. Itaque iure molestias necessitatibus possimus voluptatum.
+                </p>
+            </div>
+
+
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'kawaldpr'; // required: replace example with your forum shortname
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span
+                    class="logo-disqus">Disqus</span></a>
+
+        </div>
+        <div class="col-lg-4">
+            <ul class="list-group">
+                <li class="list-group-item"><h3>Anggota DPR Terkait</h3></li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img class="media-object pull-left" src="http://lorempixel.com/64/64" alt="...">
+                        </div>
+                        <div class="col-sm-9">
+                            <a href="{% url 'legislature-detail' %}"><h4>Anas Urban </h4></a>
+                            <p><span>Fraksi: </span>PDIK</p>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img class="media-object pull-left" src="http://lorempixel.com/64/64" alt="...">
+                        </div>
+                        <div class="col-sm-9">
+                            <a href="{% url 'legislature-detail' %}"><h4>Cinta Laura</h4></a>
+                            <p><span>Fraksi: </span>PDIK</p>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img class="media-object pull-left" src="http://lorempixel.com/64/64" alt="...">
+                        </div>
+                        <div class="col-sm-9">
+                            <a href="{% url 'legislature-detail' %}"><h4>Cinta Laura</h4></a>
+                            <p><span>Fraksi: </span>PDIK</p>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <img class="media-object pull-left" src="http://lorempixel.com/64/64" alt="...">
+                        </div>
+                        <div class="col-sm-9">
+                            <a href="{% url 'legislature-detail' %}"><h4>Cinta Laura</h4></a>
+                            <p><span>Fraksi: </span>PDIK</p>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

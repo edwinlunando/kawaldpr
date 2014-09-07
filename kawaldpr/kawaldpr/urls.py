@@ -20,6 +20,7 @@ urlpatterns = patterns('',
 
 
 
+                       url(r'^media/detail/$', legislature_views.MediumDetail.as_view(), name='medium-detail'),
                        url(r'^dpr/detail/$', legislature_views.LegislatureDetail.as_view(), name='legislature-detail'),
                        url(r'^dpr/$', legislature_views.LegislatureList.as_view(), name='legislatures'),
                        # Examples:

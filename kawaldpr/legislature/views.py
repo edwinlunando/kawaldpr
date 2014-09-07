@@ -11,3 +11,7 @@ class LegislatureList(ListView):
 
 class LegislatureDetail(TemplateView):
     template_name = 'legislature/legislature-detail.html'
+
+
+class MediumDetail(TemplateView):
+    template_name = 'legislature/medium-detail.html'
