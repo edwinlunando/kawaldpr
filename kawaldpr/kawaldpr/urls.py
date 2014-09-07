@@ -10,7 +10,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^$', TemplateView.as_view(template_name='base.html'), name='home'),
+                       url(r'^$', TemplateView.as_view(template_name='core/home.html'), name='home'),
                        url(r'^sign-in/$', core_views.SignInPage.as_view(), name='sign-in'),
                        url(r'^sign-out/$', logout, {'next_page': '/'}, name='sign-out'),
                        url(r'^contact/$', core_views.ContactPage.as_view(), name='contact'),
@@ -20,7 +20,7 @@ urlpatterns = patterns('',
 
 
 
-                       url(r'^dpr/detail$', legislature_views.LegislatureDetail.as_view(), name='legislature-detail'),
+                       url(r'^dpr/detail/$', legislature_views.LegislatureDetail.as_view(), name='legislature-detail'),
                        url(r'^dpr/$', legislature_views.LegislatureList.as_view(), name='legislatures'),
                        # Examples:
                        # url(r'^$', 'kawaldpr.views.home', name='home'),

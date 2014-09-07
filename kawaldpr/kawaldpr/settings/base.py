@@ -45,7 +45,7 @@ MANAGERS = ADMINS
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': '',
         'USER': '',
         'PASSWORD': '',
@@ -315,6 +315,7 @@ CKEDITOR_CONFIGS = {
 PIPELINE_JS = {
     'application': {
         'source_filenames': (
+            'js/jquery.min.js'
             'js/bootstrap.min.js',
             'js/kawaldpr.js',
         ),

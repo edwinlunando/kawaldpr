@@ -3,20 +3,112 @@
 {% load staticfiles %}
 
 {% block page_title %}
-    Daftar Anggota DPR
 {% endblock %}
 
 {% block content %}
     <div class="row">
-        <div class="media">
-            <a class="pull-left" href="#">
-                <img class="media-object" src="..." alt="...">
-            </a>
+        <div class="col-sm-3">
+            <ul class="list-group">
+                <li class="list-group-item text-center"><img class="media-object" src="{% static 'img/lorem128.jpg' %}"
+                                                             alt="..."></li>
+                <li class="list-group-item">Edwin Lunando</li>
+                <li class="list-group-item">Fraksi: PDIK</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+        </div>
+        <div class="col-sm-9">
+            <h2>Berita Terkait</h2>
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
+                    </a>
 
-            <div class="media-body">
-                <h4 class="media-heading">Media heading</h4>
-                ...
-            </div>
+                    <div class="media-body">
+                        <a href=""><h3 class="media-heading">Wawancara Anggota DPR Mendapatkan Hadiah Mobil</h3></a>
+
+                        <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
+                            itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
+                            Kamil yang dilakukan akun tersebut yang diduga mahasiswa UPI.</p>
+                        <span>Anggota DRP Terkait:</span>
+                        <span class="label label-primary">Jero Wacik</span>
+                        <span class="label label-primary">Marzuki Ali</span>
+                        <span class="label label-primary">Wayne Ronney</span>
+                    </div>
+                </li>
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
+                    </a>
+
+                    <div class="media-body">
+                        <a href=""><h3 class="media-heading">Media heading</h3></a>
+
+                        <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
+                            itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
+                            Kamil yang dilakukan akun tersebut yang diduga mahasiswa UPI.</p>
+                        <span>Anggota DRP Terkait:</span>
+                        <span class="label label-primary">Jero Wacik</span>
+                        <span class="label label-primary">Marzuki Ali</span>
+                        <span class="label label-primary">Wayne Ronney</span>
+                    </div>
+                </li>
+            </ul>
+            <a href=""><span>Lihat semua</span></a>
+
+            <h2>Public Statement</h2>
+
+            <ul class="media-list">
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
+                    </a>
+
+                    <div class="media-body">
+                        <a href=""><h3 class="media-heading">Presiden Muda Indonesia</h3></a>
+
+                        <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
+                            itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
+                            Kamil yang dilakukan akun tersebut yang diduga mahasiswa UPI.</p>
+                    </div>
+                </li>
+                <li class="media">
+                    <a class="pull-left" href="#">
+                        <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
+                    </a>
+
+                    <div class="media-body">
+                        <a href=""><h3 class="media-heading">Minyak itu Bersih</h3></a>
+
+                        <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
+                            itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
+                            Kamil yang dilakukan akun tersebut yang diduga mahasiswa UPI.</p>
+                    </div>
+                </li>
+            </ul>
+            <a href=""><span>Lihat semua</span></a>
+
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                var disqus_shortname = 'kawaldpr'; // required: replace example with your forum shortname
+
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function () {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+                Disqus.</a></noscript>
+            <a href="http://disqus.com" class="dsq-brlink">comments powered by <span
+                    class="logo-disqus">Disqus</span></a>
+
         </div>
     </div>
 

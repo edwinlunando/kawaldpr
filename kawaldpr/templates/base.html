@@ -48,10 +48,10 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{% url 'home' %}">Home</a></li>
                 {% if not user.is_authenticated %}
-                    <li><a href="{% url 'sign-in' %}">Sign-in</a></li>
+{#                    <li><a href="{% url 'sign-in' %}">Sign-in</a></li>#}
                 {% else %}
-                    <li><a href="{% url 'forgot-password' %}">Forgot Password</a></li>
-                    <li><a href="{% url 'sign-out' %}">Sign-out</a></li>
+{#                    <li><a href="{% url 'forgot-password' %}">Forgot Password</a></li>#}
+{#                    <li><a href="{% url 'sign-out' %}">Sign-out</a></li>#}
                 {% endif %}
                 <li><a href="{% url 'legislatures' %}">DPR</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
@@ -85,7 +85,7 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+{#<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>#}
 {% compressed_js 'application' %}
 {% block extra_js %}{% endblock extra_js %}
 </body>

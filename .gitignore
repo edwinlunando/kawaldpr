@@ -69,3 +69,9 @@ atlassian-ide-plugin.xml
 com_crashlytics_export_strings.xml
 
 local.py
+
+# Capistrano
+Capfile
+
+config
+lib
