@@ -315,7 +315,6 @@ CKEDITOR_CONFIGS = {
 PIPELINE_JS = {
     'application': {
         'source_filenames': (
-            'js/jquery.min.js'
             'js/bootstrap.min.js',
             'js/kawaldpr.js',
         ),
