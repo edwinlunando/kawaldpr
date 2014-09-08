@@ -3,7 +3,7 @@
 
     Title :  Kuliah Kita
     Date  :  Maret 2014
-    Author:  Suitmedia (http://www.suitmedia.com)
+    Author:  Edwin Lunando @edwinlunando
 
 ********************************************************************************/
 
