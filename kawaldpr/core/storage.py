@@ -1,5 +1,5 @@
-from pipeline.storage import GZIPMixin, PipelineCachedStorage
+from pipeline.storage import GZIPMixin, PipelineStorage
 
 
-class GZIPCachedStorage(GZIPMixin, PipelineCachedStorage):
+class GZIPCachedStorage(GZIPMixin, PipelineStorage):
     pass
