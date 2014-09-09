@@ -1,10 +1,26 @@
 {% extends 'base.html' %}
 
-{% block page_title %}
-    Berita Terbaru
-{% endblock %}
 
 {% block content %}
+    <div class="row">
+        <div class="col-lg-4">
+            <h1>Berita Terbaru</h1>
+        </div>
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+            <form action="" >
+                <div class="form-group">
+
+                    <input type="text" class="form-control" placeholder="Cari Berita"/>
+
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-8">
             <ul class="media-list">
@@ -14,7 +30,8 @@
                     </a>
 
                     <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Wawancara Anggota DPR Mendapatkan Hadiah Mobil</h3></a>
+                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Wawancara Anggota DPR Mendapatkan
+                            Hadiah Mobil</h3></a>
 
                         <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
                             itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
@@ -31,7 +48,8 @@
                     </a>
 
                     <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Anggota DPR Ketahuan Nonton Anime saat sidang Paripurna</h3></a>
+                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Anggota DPR Ketahuan Nonton Anime
+                            saat sidang Paripurna</h3></a>
 
                         <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
                             itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
@@ -48,7 +66,8 @@
                     </a>
 
                     <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Cinta Laura Makan Sate Bareng Rhoma Irama</h3></a>
+                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Cinta Laura Makan Sate Bareng
+                            Rhoma Irama</h3></a>
 
                         <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
                             itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
@@ -65,7 +84,8 @@
                     </a>
 
                     <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Surya Nahloh Ketahuan Membawa Tas Hello Kitty Saat Rapat Umum Partai</h3></a>
+                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Surya Nahloh Ketahuan Membawa Tas
+                            Hello Kitty Saat Rapat Umum Partai</h3></a>
 
                         <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
                             itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
@@ -88,6 +108,7 @@
                         </div>
                         <div class="col-sm-9">
                             <a href="{% url 'legislature-detail' %}"><h4>Ahmad Dhani</h4></a>
+
                             <p><span>Fraksi: </span>PDIK</p>
 
                         </div>
@@ -100,6 +121,7 @@
                         </div>
                         <div class="col-sm-9">
                             <a href="{% url 'legislature-detail' %}"><h4>Cinta Laura</h4></a>
+
                             <p><span>Fraksi: </span>PDIK</p>
 
                         </div>
@@ -112,6 +134,7 @@
                         </div>
                         <div class="col-sm-9">
                             <a href="{% url 'legislature-detail' %}"><h4>Dian Sastro</h4></a>
+
                             <p><span>Fraksi: </span>PDIK</p>
 
                         </div>
@@ -124,6 +147,7 @@
                         </div>
                         <div class="col-sm-9">
                             <a href="{% url 'legislature-detail' %}"><h4>Bima</h4></a>
+
                             <p><span>Fraksi: </span>PDIK</p>
 
                         </div>
