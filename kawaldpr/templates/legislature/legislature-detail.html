@@ -8,11 +8,11 @@
             <ul class="list-group">
                 <li class="list-group-item text-center"><img class="media-object" src="{% static 'img/lorem128.jpg' %}"
                                                              alt="..."></li>
-                <li class="list-group-item">Edwin Lunando</li>
-                <li class="list-group-item">Fraksi: PDIK</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">{{ legislature.name }}</li>
+                <li class="list-group-item">Fraksi: {{ legislature.fraction }}</li>
+                <li class="list-group-item">Area: {{ legislature.area }}</li>
+                <li class="list-group-item">Twitter: {{ legislature.twitter }}</li>
+                <li class="list-group-item">Facebook: {{ legislature.facebook }}</li>
             </ul>
         </div>
         <div class="col-sm-9">

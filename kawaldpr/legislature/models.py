@@ -10,12 +10,18 @@ class Area(TimeStampedModel):
     """
     name = models.CharField(max_length=200)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Fraction(TimeStampedModel):
     """
     Fraction of Indonesia party
     """
     name = models.CharField(max_length=200)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Legislature(TimeStampedModel):
@@ -67,6 +73,7 @@ class Medium(TimeStampedModel):
     """
     title = models.CharField(max_length=200)
     content = RichTextField(blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to='medium')
 
     reference = models.TextField(null=True, blank=True)
 

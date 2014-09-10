@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 
-
 {% block content %}
     <div class="row">
         <div class="col-lg-4">
@@ -26,12 +25,12 @@
                 {% paginate 4 media %}
                 {% for medium in media %}
                 <li class="media">
-                    <a class="pull-left" href="#">
+                    <a class="pull-left" href="{% url 'medium-detail' medium.slug %}">
                         <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
                     </a>
 
                     <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">{{ medium.title }}</h3></a>
+                        <a href="{% url 'medium-detail' medium.slug %}"><h3 class="media-heading">{{ medium.title }}</h3></a>
 
                         {{ medium.content|safe }}
 

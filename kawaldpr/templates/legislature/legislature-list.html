@@ -9,146 +9,39 @@
         <span></span>
     </div>
     <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="{% url 'legislature-detail' %}"><img data-src="holder.js/400x200/#92d8a6:#74ac84" alt="..." class="img-responsive">
-                </a>
+        {% for legislature in legislatures %}
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="{% url 'legislature-detail' legislature.slug %}"><img data-src="holder.js/400x200/#92d8a6:#74ac84" alt="..."
+                                                                  class="img-responsive">
+                    </a>
 
-                <div class="caption">
-                    <a href="{% url 'legislature-detail' %}"><h3>Dian Sastro</h3></a>
+                    <div class="caption">
+                        <a href="{% url 'legislature-detail' legislature.slug %}"><h3>{{ legislature.name }}</h3></a>
 
-                    <ul class="list-group">
-                      <li class="list-group-item">Fraksi: PDIK</li>
-                      <li class="list-group-item">Dapil: Jakarta Kota</li>
-                      <li class="list-group-item">Twitter: @edwinlunando</li>
-                      <li class="list-group-item">Facebook: Gak punya</li>
-                    </ul>
+                        <ul class="list-group">
+                            <li class="list-group-item">Fraksi: {{ legislature.fraction }}</li>
+                            <li class="list-group-item">Dapil: {{ legislaturearea }}</li>
+                            <li class="list-group-item">Twitter: {{ legislature.twitter }}</li>
+                            <li class="list-group-item">Facebook: {{ legislature.facebook }}</li>
+                        </ul>
 
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
-                        <a href="#" class="btn btn-default" role="button">Button</a>
-                    </p>
+                        {#                    <p>#}
+                        {#                        <a href="#" class="btn btn-primary" role="button">Button</a>#}
+                        {#                        <a href="#" class="btn btn-default" role="button">Button</a>#}
+                        {#                    </p>#}
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="{% url 'legislature-detail' %}"><img data-src="holder.js/400x200/#92d8a6:#74ac84" alt="..." class="img-responsive">
-                </a>
 
-                <div class="caption">
-                    <a href="{% url 'legislature-detail' %}"><h3>Deni Chandra</h3></a>
-
-                    <ul class="list-group">
-                      <li class="list-group-item">Fraksi: PDIK</li>
-                      <li class="list-group-item">Dapil: Jakarta Kota</li>
-                      <li class="list-group-item">Twitter: @edwinlunando</li>
-                      <li class="list-group-item">Facebook: Gak punya</li>
-                    </ul>
-
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
-                        <a href="#" class="btn btn-default" role="button">Button</a>
-                    </p>
+            {% if forloop.counter|divisibleby:"3" %}
                 </div>
-            </div>
+                <br/>
+                <div class="row">
+            {% endif %}
+        {% endfor %}
+
         </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="{% url 'legislature-detail' %}"><img data-src="holder.js/400x200/#92d8a6:#74ac84" alt="..." class="img-responsive">
-                </a>
-
-                <div class="caption">
-                    <a href="{% url 'legislature-detail' %}"><h3>Ayu Purwarianti</h3></a>
-
-                    <ul class="list-group">
-                      <li class="list-group-item">Fraksi: PDIK</li>
-                      <li class="list-group-item">Dapil: Jakarta Kota</li>
-                      <li class="list-group-item">Twitter: @edwinlunando</li>
-                      <li class="list-group-item">Facebook: Gak punya</li>
-                    </ul>
-
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
-                        <a href="#" class="btn btn-default" role="button">Button</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="{% url 'legislature-detail' %}"><img data-src="holder.js/400x200/#92d8a6:#74ac84" alt="..." class="img-responsive">
-                </a>
-
-                <div class="caption">
-                    <a href="{% url 'legislature-detail' %}"><h3>Shinta Naomi</h3></a>
-
-                    <ul class="list-group">
-                      <li class="list-group-item">Fraksi: PDIK</li>
-                      <li class="list-group-item">Dapil: Jakarta Kota</li>
-                      <li class="list-group-item">Twitter: @edwinlunando</li>
-                      <li class="list-group-item">Facebook: Gak punya</li>
-                    </ul>
-
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
-                        <a href="#" class="btn btn-default" role="button">Button</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="{% url 'legislature-detail' %}"><img data-src="holder.js/400x200/#92d8a6:#74ac84" alt="..." class="img-responsive">
-                </a>
-
-                <div class="caption">
-                    <a href="{% url 'legislature-detail' %}"><h3>Komeng</h3></a>
-
-                    <ul class="list-group">
-                      <li class="list-group-item">Fraksi: PDIK</li>
-                      <li class="list-group-item">Dapil: Jakarta Kota</li>
-                      <li class="list-group-item">Twitter: @edwinlunando</li>
-                      <li class="list-group-item">Facebook: Gak punya</li>
-                    </ul>
-
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
-                        <a href="#" class="btn btn-default" role="button">Button</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-                <a href="{% url 'legislature-detail' %}"><img data-src="holder.js/400x200/#92d8a6:#74ac84" alt="..." class="img-responsive">
-                </a>
-
-                <div class="caption">
-                    <a href="{% url 'legislature-detail' %}"><h3>Cak Lontong</h3></a>
-
-                    <ul class="list-group">
-                      <li class="list-group-item">Fraksi: PDIK</li>
-                      <li class="list-group-item">Dapil: Jakarta Kota</li>
-                      <li class="list-group-item">Twitter: @edwinlunando</li>
-                      <li class="list-group-item">Facebook: Gak punya</li>
-                    </ul>
-
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Button</a>
-                        <a href="#" class="btn btn-default" role="button">Button</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">.col-md-6</div>
-        <div class="col-md-6">.col-md-6</div>
-    </div>
 
 {% endblock %}
 

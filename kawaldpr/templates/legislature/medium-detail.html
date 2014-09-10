@@ -16,7 +16,7 @@
 {% block content %}
     <div class="row">
         <div class="col-lg-8">
-            <h2>Edwin Lunando Berhasil Menangkap Jero Wacik</h2>
+            <h2>{{ medium.title }}</h2>
 
             <div class="row">
                 <figure>
@@ -30,14 +30,8 @@
 
             <br/>
             <div class="row">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem molestias omnis similique sint vero voluptatem. Consectetur doloremque dolorum, esse fugiat id ipsam molestiae, numquam quae, quam quod sit veniam voluptas.
-
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi aperiam, architecto, autem cumque dolor exercitationem harum ipsam itaque iure, obcaecati soluta tenetur voluptatum. Itaque iure molestias necessitatibus possimus voluptatum.
-                </p>
+                {{ medium.content|safe }}
             </div>
-
-
 
             <div id="disqus_thread"></div>
             <script type="text/javascript">

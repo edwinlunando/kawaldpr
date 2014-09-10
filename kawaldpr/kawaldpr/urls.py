@@ -7,6 +7,7 @@ from legislature import views as legislature_views
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -19,9 +20,10 @@ urlpatterns = patterns('',
                            core_views.ResetPasswordPage.as_view(), name='reset-password'),
 
 
-
-                       url(r'^media/detail/$', legislature_views.MediumDetail.as_view(), name='medium-detail'),
-                       url(r'^dpr/detail/$', legislature_views.LegislatureDetail.as_view(), name='legislature-detail'),
+                       url(r'^media/(?P<slug>[-_\w]+)/$', legislature_views.MediumDetail.as_view(),
+                           name='medium-detail'),
+                       url(r'^dpr/(?P<slug>[-_\w]+)/$', legislature_views.LegislatureDetail.as_view(),
+                           name='legislature-detail'),
                        url(r'^dpr/$', legislature_views.LegislatureList.as_view(), name='legislatures'),
                        # Examples:
                        # url(r'^$', 'kawaldpr.views.home', name='home'),
@@ -34,14 +36,15 @@ urlpatterns = patterns('',
                        # (r'^grappelli/', include('grappelli.urls')), # grappelli URLS
                        (r'^ckeditor/', include('ckeditor.urls')),
                        # url(r'^admin/', include('admin_honeypot.urls')), # The fake admin URI
-                       url(r'^backend/', include(admin.site.urls)), # The real admin URI
-                       )
+                       url(r'^backend/', include(admin.site.urls)),  # The real admin URI
+)
 
 # Uncomment the next line to serve media files in dev.
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
     import debug_toolbar
+
     urlpatterns += patterns('',
                             url(r'^__debug__/', include(debug_toolbar.urls)),
-                            )
+    )
