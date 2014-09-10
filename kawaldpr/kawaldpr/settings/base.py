@@ -202,6 +202,7 @@ DJANGO_APPS = (
     # 'admin_honeypot',  # https://github.com/dmpayton/django-admin-honeypot
     'ckeditor',  # https://pypi.python.org/pypi/django-ckeditor-updated/4.4.0
     'pipeline',  # https://github.com/cyberdelia/django-pipeline
+    'endless_pagination'
 )
 
 # Apps specific for this project go here.
@@ -277,7 +278,8 @@ AUTHENTICATION_BACKENDS = (
 # https://pypi.python.org/pypi/django-ckeditor-updated/4.4.0
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_IMAGE_BACKEND = 'Pillow'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
+CKEDITOR_RESTRICT_BY_USER = True
 
 CKEDITOR_CONFIGS = {
     'default': {

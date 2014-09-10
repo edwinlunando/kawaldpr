@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 
+
 {% block content %}
     <div class="row">
         <div class="col-lg-4">
@@ -11,12 +12,8 @@
         <div class="col-lg-4">
             <form action="" >
                 <div class="form-group">
-
                     <input type="text" class="form-control" placeholder="Cari Berita"/>
-
                 </div>
-
-
             </form>
         </div>
     </div>
@@ -24,79 +21,30 @@
     <div class="row">
         <div class="col-md-8">
             <ul class="media-list">
+                {% load endless %}
+
+                {% paginate 4 media %}
+                {% for medium in media %}
                 <li class="media">
                     <a class="pull-left" href="#">
                         <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
                     </a>
 
                     <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Wawancara Anggota DPR Mendapatkan
-                            Hadiah Mobil</h3></a>
+                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">{{ medium.title }}</h3></a>
 
-                        <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
-                            itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
-                            Kamil yang dilakukan akun tersebut yang diduga mahasiswa UPI.</p>
-                        <span class="margin-right-5">Anggota DRP Terkait:</span>
-                        <span class="label label-primary margin-right-5">Jero Wacik</span>
-                        <span class="label label-primary margin-right-5">Marzuki Ali</span>
-                        <span class="label label-primary margin-right-5">Wayne Ronney</span>
+                        {{ medium.content|safe }}
+
+                        <span class="margin-right-5">Anggota DPR Terkait:</span>
+                        {% for legislature in medium.legislatures.all %}
+                        <span class="label label-primary margin-right-5">{{ legislature.name }}</span>
+                        {% endfor %}
+
                     </div>
                 </li>
-                <li class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
-                    </a>
-
-                    <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Anggota DPR Ketahuan Nonton Anime
-                            saat sidang Paripurna</h3></a>
-
-                        <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
-                            itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
-                            Kamil yang dilakukan akun tersebut yang diduga mahasiswa UPI.</p>
-                        <span class="margin-right-5">Anggota DRP Terkait:</span>
-                        <span class="label label-primary margin-right-5">Jero Wacik</span>
-                        <span class="label label-primary margin-right-5">Marzuki Ali</span>
-                        <span class="label label-primary margin-right-5">Wayne Ronney</span>
-                    </div>
-                </li>
-                <li class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
-                    </a>
-
-                    <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Cinta Laura Makan Sate Bareng
-                            Rhoma Irama</h3></a>
-
-                        <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
-                            itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
-                            Kamil yang dilakukan akun tersebut yang diduga mahasiswa UPI.</p>
-                        <span class="margin-right-5">Anggota DRP Terkait:</span>
-                        <span class="label label-primary margin-right-5">Jero Wacik</span>
-                        <span class="label label-primary margin-right-5">Marzuki Ali</span>
-                        <span class="label label-primary margin-right-5">Wayne Ronney</span>
-                    </div>
-                </li>
-                <li class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://lorempixel.com/64/64" alt="...">
-                    </a>
-
-                    <div class="media-body">
-                        <a href="{% url 'medium-detail' %}"><h3 class="media-heading">Surya Nahloh Ketahuan Membawa Tas
-                            Hello Kitty Saat Rapat Umum Partai</h3></a>
-
-                        <p>Tim IT UPI ikut turun tangan melakukan penelusuran terhadap akun twitter @kemalsept. Langkah
-                            itu diambil untuk meluruskan kicauan penghinaan terhadap Kota Bandung dan Wali Kota Ridwan
-                            Kamil yang dilakukan akun tersebut yang diduga mahasiswa UPI.</p>
-                        <span class="margin-right-5">Anggota DRP Terkait:</span>
-                        <span class="label label-primary margin-right-5">Jero Wacik</span>
-                        <span class="label label-primary margin-right-5">Marzuki Ali</span>
-                        <span class="label label-primary margin-right-5">Wayne Ronney</span>
-                    </div>
-                </li>
+                {% endfor %}
             </ul>
+            {% show_pages %}
         </div>
         <div class="col-md-4">
             <ul class="list-group">

@@ -1,3 +1,4 @@
+from autoslug import AutoSlugField
 from ckeditor.fields import RichTextField
 from django.db import models
 from model_utils.models import TimeStampedModel
@@ -51,8 +52,13 @@ class Legislature(TimeStampedModel):
     area = models.ForeignKey(Area, null=True, blank=True)
     fraction = models.ForeignKey(Fraction, null=True, blank=True)
 
+    slug = AutoSlugField(populate_from='name', null=True, blank=True)
+
     # Active
     published = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Medium(TimeStampedModel):
@@ -66,8 +72,13 @@ class Medium(TimeStampedModel):
 
     legislatures = models.ManyToManyField(Legislature, null=True, blank=True, related_name='media')
 
+    slug = AutoSlugField(populate_from='title', null=True, blank=True)
+
     # Active
     published = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return self.title
 
 
 class Statement(TimeStampedModel):

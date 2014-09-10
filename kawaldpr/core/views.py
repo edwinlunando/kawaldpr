@@ -6,11 +6,18 @@ from django.db import transaction
 from django.http import Http404
 from django.shortcuts import redirect, render, get_object_or_404
 from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, ListView
 from django.views.generic.edit import FormMixin
 from .forms import SignUpForm, SignInForm, ContactForm, ForgotPasswordForm
 from .mailers import ForgotPasswordEmail
 from .models import ForgotPassword, User
+from legislature.models import Medium
+
+
+class HomePage(ListView):
+    model = Medium
+    context_object_name = 'media'
+    template_name = 'core/home.html'
 
 
 # Create your views here.

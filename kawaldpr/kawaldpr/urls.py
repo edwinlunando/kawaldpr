@@ -10,7 +10,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-                       url(r'^$', TemplateView.as_view(template_name='core/home.html'), name='home'),
+                       url(r'^$', core_views.HomePage.as_view(), name='home'),
                        url(r'^sign-in/$', core_views.SignInPage.as_view(), name='sign-in'),
                        url(r'^sign-out/$', logout, {'next_page': '/'}, name='sign-out'),
                        url(r'^contact/$', core_views.ContactPage.as_view(), name='contact'),
@@ -32,6 +32,7 @@ urlpatterns = patterns('',
 
                        # Uncomment the next line to enable the admin:
                        # (r'^grappelli/', include('grappelli.urls')), # grappelli URLS
+                       (r'^ckeditor/', include('ckeditor.urls')),
                        # url(r'^admin/', include('admin_honeypot.urls')), # The fake admin URI
                        url(r'^backend/', include(admin.site.urls)), # The real admin URI
                        )
